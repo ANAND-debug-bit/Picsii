@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Picsii</title>
+    </head>
+
+    <body>
+        <h1>img to pixy art</h1>
+        <input type="file" id="upload" accept="image/*">
+        <br>
+        <div class="controls">
+            <label>
+                presets
+                <select name="preset" id="preset">
+                    <option value="simple">classic</option> 
+                    <option value="normal">sketch</option>
+                    <option value="block">solid</option>
+                    <option value="minimal">dot</option>
+                </select>
+            </label>
+            <label>
+                <input type="checkbox" id="invert">
+                invert
+            </label>
+            <label>
+                contrast
+                <input type="range" id="contrast" min="0" max="300" value="100">
+                <span id="contrastval">100</span>
+            </label>
+        </div>
+        
+        <br>
+        <canvas id="canvas"></canvas>
+        <div class="ascii-con">
+            <button id="copyts">copy</button>
+            <pre id="ascii"></pre>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
