@@ -2,7 +2,7 @@ const upload = document.getElementById("upload");
 const canvas = document.getElementById("canvas");
 const con = canvas.getContext("2d");
 const asciiout = document.getElementById("ascii");
-const presets = {normal: "@%#&$MW8B0XKRqpZUdhmvyc*+=~-_;:,. ", simple: "@%#*+=-:. ", block: "█▓▒░ ", minimal: "....    "};
+const presets = {classic: "@%#&$MW8B0XKRqpZUdhmvyc*+=~-_;:,. ", sketch: "@%#*+=-:. ", solid: "█▓▒░ ", dot: "....    "};
 const copyts = document.getElementById("copyts");
 const contrast = document.getElementById("contrast");
 const contrastval = document.getElementById("contrastval");
@@ -79,7 +79,7 @@ function convertascii() {
         }
         ascii += '\n';
     }
-    if (presetsel.value==="minimal"){
+    if (presetsel.value==="dot"){
         asciiout.style.fontWeight = 900;
     }
     else{
