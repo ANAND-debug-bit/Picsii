@@ -11,3 +11,30 @@ const asciicon = document.querySelector(".ascii-con");
 let presetsel = document.getElementById("preset");
 let img = null;
 
+upload.addEventListener("change", () => {
+    const file = upload.files[0];
+    if(!file) return;
+
+    const currimg = new Image();
+    currimg.src = URL.createObjectURL(file);
+    currimg.onload = () => {
+        asciicon.style.display = "block";
+        img = currimg;
+        convertascii();
+    };
+});
+
+presetsel.addEventListener("change", () => {
+    if(img) convertascii()
+});
+
+if (copyts){
+    copyts.addEventListener("click", () => {
+        navigator.clipboard.writeText(asciiout.textContent);
+        copyts.textContent = "copied!";
+        setTimeout(() => {
+            copyts.textContent = "copy";
+        }, 1500);
+    })
+};
+
