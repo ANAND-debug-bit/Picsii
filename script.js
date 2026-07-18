@@ -38,3 +38,11 @@ if (copyts){
     })
 };
 
+contrast.addEventListener("input", () => {
+    contrastval.textContent = contrast.value;
+    if(img) convertascii();
+});
+
+invert.addEventListener("change", () => {
+    if(img) convertascii();
+});
